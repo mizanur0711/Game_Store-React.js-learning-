@@ -1,17 +1,18 @@
 import { useState } from "react";
-import Alert from "./components/Alert";
-import Button from "./components/Button";
+import ExpenseList from "./expense-tracker/components/ExpenseList";
 
 function App() {
-  const [alertVisible, setAlert] = useState(false);
+  const expenses = [
+    { id: 1, description: "aaa", amount: 10, category: "Utilities" },
+    { id: 2, description: "aaa", amount: 14, category: "Utilities" },
+    { id: 3, description: "aaa", amount: 20, category: "Utilities" },
+  ];
   return (
     <div>
-      {alertVisible && <Alert onClose={() => setAlert(false)}>Alert</Alert>}
-      <Button
-        children="primary"
-        color="secondary"
-        Onclick={() => setAlert(true)}
-      />
+      <ExpenseList
+        expenses={expenses}
+        onDelete={() => console.log("asdf")}
+      ></ExpenseList>
     </div>
   );
 }
