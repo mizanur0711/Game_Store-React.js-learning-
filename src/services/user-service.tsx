@@ -1,4 +1,4 @@
-import create from "./htpp-service";
+import create from "./http-service";
 
 export interface User {
   id: number;
